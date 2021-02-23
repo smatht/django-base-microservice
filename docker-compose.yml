@@ -12,3 +12,10 @@ services:
         - 8000
       env_file:
         - ./env/.dev.env
+      networks:
+        - backend
+
+networks:
+    backend:
+        external:
+            name: backend

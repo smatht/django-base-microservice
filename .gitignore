@@ -108,3 +108,4 @@ media/
 
 # PYCHARM
 .idea/
+docker-compose-override.yml
