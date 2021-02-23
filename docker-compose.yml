@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+    [name_service]:
+      build:
+        context: ./docker/prod/
+        target: dev
+      image: [name_image]
+      restart: always
+      container_name: [name_container]
+      expose:
+        - 8000
+      env_file:
+        - ./env/.dev.env
