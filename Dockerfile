@@ -12,7 +12,7 @@ RUN apk update \
    && apk add libffi-dev openssl-dev \
    && rm -rf /var/cache/apk/*
 
-COPY ./requirements/requirements.txt .
+COPY ./requirements.txt .
 RUN pip install -U pip \
    && pip wheel --no-cache-dir -r requirements.txt
 
@@ -47,13 +47,6 @@ RUN chown -R app:app $HOME
 
 # ==================
 # DEVELOPMENT IMAGE
-# ==================
-
-FROM base as local
-ENTRYPOINT ["/home/app/entrypoint.sh"]
-
-# ==================
-# PRODUCTION IMAGE
 # ==================
 
 FROM base as dev

@@ -8,10 +8,10 @@ RUN apk update \
     && apk add postgresql-dev gcc python3-dev musl-dev
 
 RUN pip install --upgrade pip
-COPY ../../requirements /requirements
+COPY requirements /requirements
 RUN pip install -r /requirements/dev.txt
 
-COPY ../../source .
-COPY ../../entrypoint.sh .
+COPY source .
+COPY entrypoint.sh .
 
 ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
